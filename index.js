@@ -125,7 +125,15 @@ async function run() {
             const query = { email: email }
             const cursor = orderCollection.find(query);
             const orders = await cursor.toArray();
+            console.log(orders);
             res.json(orders);
+        });
+
+        app.get('/orders', async (req, res) => {
+            const cursor = orderCollection.find(query);
+            const order = await cursor.toArray();
+            console.log(order)
+            res.json(order);
         });
 
 
